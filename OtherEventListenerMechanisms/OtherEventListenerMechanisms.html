@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <title>OtherEventListenerMechanisms</title>
+
+  </head>
+  <body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Other Event Listener Mechanisms</h1>
+            <p class="lead"> there are two other ways of registering event handlers that you might see: event handler properties and inline event handlers.</p>
+            <hr class="my-4">
+            <h4>Event handler properties</h4>
+            <p>Objects (such as buttons) that can fire events also usually have properties whose name is on followed by the name of the event. </p>
+            <p> For example, elements have a property onclick.</p>
+            <p> This is called an event handler property.</p>
+            <p> To listen for the event, you can assign the handler function to the property.</p>
+            <ul>For example, we could rewrite the random-color example like this:
+                <li>const btn = document.querySelector('button');</li>
+                <li></li>
+                <li>function random(number) {</li>
+                <li>&nbsp&nbsp return Math.floor(Math.random() * (number+1));</li>
+                <li>}</li>
+                <li></li>
+                <li>btn.onclick = () => {</li>
+                <li>&nbsp&nbsp const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;</li>
+                <li>&nbsp&nbsp document.body.style.backgroundColor = rndCol;</li>
+                <li>}</li>
+            </ul>
+            <hr>
+            <h4>Inline event handlers — don't use these</h4>
+            <ul>You might also see a pattern like this in your code:
+                <li><button onclick="bgChange()">Press me</button></li>
+            </ul>
+            <hr>
+            <ul>
+                <li>function bgChange() {</li>
+                <li>&nbsp&nbsp  const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;</li>
+                <li>&nbsp&nbsp  document.body.style.backgroundColor = rndCol;</li>
+                <li>}</li>
+            </ul>
+            <hr>
+
+
+
+            <a class="btn btn-primary btn-lg" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#other_event_listener_mechanisms" role="button">Learn more</a>
+          </div>
+          <hr>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+    <script>
+        function bgChange() {
+        const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        document.body.style.backgroundColor = rndCol;
+    }
+
+    </script>
+  </body>
+</html>
